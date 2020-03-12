@@ -49,10 +49,9 @@ console.log(SQL);
         console.log(result.rows);
         console.log(result.rows.title);
         let book = result.rows[0];
-        let text = JSON.stringify(book);
-        res.end(text)
-        //const params = {bookTitle: bookTitle};
-        //res.render('results', params);
+        let bookTitle = JSON.stringify(book.title)
+        const params = {bookTitle: bookTitle};
+        res.render('results', params);
     }); 
 }
 
