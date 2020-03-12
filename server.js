@@ -49,8 +49,11 @@ console.log(SQL);
         console.log(result.rows);
         console.log(result.rows.title);
         let book = result.rows[0];
-        let bookTitle = String(book.title);
-        const params = {bookTitle: bookTitle};
+        let bookJSON = JSON.stringify(book);
+        let title = String(book.title);
+        let author = String(book.author);
+        let genre = String(book.genre);
+        const params = {bookJSON: bookJSON, title: title, author: author, genre: genre};
         res.render('results', params);
     }); 
 }
