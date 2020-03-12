@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Postal Rate Form</title>
+   <style>
+       body {
+           background-color: goldenrod;
+           text-align: center;
+       }
+   </style>
+</head>
+<body>
+    <div class="header">
+    <h1>Add book Form</h1>
+    <h2>Adds a new book to the user's read list</h2>
+    </div>
+    <div class="form">
+   <form action="/postalRate" method="get">
+      <label for="bookTitle">Enter the title of your book!</label> 
+      <input type="text" id="bookTitle" name="bookTitle"> <br><br>
+      <label for="bookAuthor">Enter the author of your book!</label> 
+      <input type="text" id="bookAuthor" name="bookAuthor"> <br><br>
+      <label for="bookGenre">Select your book's genre!</label>
+            <select name="bookGenre">
+                <option>Adventure</option>
+                <option>Art</option>
+                <option>Children's</option>
+                <option>Contemporary</option>
+                <option>Cooking</option>
+                <option>Development</option>
+                <option>Dystopian</option>
+                <option>Fantasy</option>
+                <option>Health</option>
+                <option>Historical Fiction</option> 
+                <option>History</option>
+                <option>Horror</option>
+                <option>How-to</option>
+                <option>Humor</option>
+                <option>Memoir</option>
+                <option>Motivational</option>
+                <option>Paranormal</option>
+                <option>Romance</option>
+                <option>Science Fiction</option> 
+                <option>Self-help</option>
+                <option>Thriller</option>
+                <option>Travel</option>
+            </select> <br><br>
+      <input type="submit" value="Submit">
+   </form>
+</div>
+</body>
+<footer>
+    Created by Jakob Rhodes
+</footer>
+</html>
