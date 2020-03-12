@@ -47,11 +47,9 @@ console.log(SQL);
         // Log this to the console for debugging purposes.
         console.log("1 record selected");
         console.log(result.rows);
-        res.json(result);
-        var bookTitle = result.rows.title;
-        console.log(bookTitle);
-        const params = {bookTitle: bookTitle};
-        res.render('results', params);
+        console.log(result.rows.title);
+        //const params = {bookTitle: bookTitle};
+        //res.render('results', params);
     }); 
 }
 
