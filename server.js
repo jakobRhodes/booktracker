@@ -14,7 +14,7 @@ app.listen(port, () => console.log(`Application is Listening on port ${port}!`))
 function displayResults (req, res) {
     addNewBookToDatabase(req, res);
     rows = selectLatestBookFromDatabase(req, res);
-    var bookTitle = rows[0].title;
+    let bookTitle = rows.title;
     const params = {bookTitle: bookTitle};
     res.render('results', params);
 }
@@ -54,3 +54,20 @@ console.log(SQL);
     }); 
 }
 
+function selectBookFromDatabase (req, res) {
+    const connectionString = process.env.DATABASE_URL || 'postgres://rbjaiulinstwdj:f189f4c73ef9dceabf44d5ce68ba252db3208b83f26bc277f4b6f24ca2893ba8@ec2-3-91-112-166.compute-1.amazonaws.com:5432/de9aegpl669co3?ssl=true';
+    const pool = new Pool({connectionString: connectionString});
+    var SQL = "SELECT * FROM Book ORDER BY Book_ID DESC LIMIT 1";
+    console.log(SQL);
+        pool.query(SQL, function(err, result) {
+            // If an error occurred...
+            if (err) {
+                console.log("Error in query: ")
+                console.log(err);
+            }
+            // Log this to the console for debugging purposes.
+            console.log("1 record selected");
+            console.log(result.rows);
+            return result.rows;
+        }); 
+    }
