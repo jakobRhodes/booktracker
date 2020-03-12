@@ -50,7 +50,7 @@ console.log(SQL);
         // Log this to the console for debugging purposes.
         console.log("1 record selected");
         console.log(result.rows);
-        JSON.stringify(result.rows);
+        bookString = JSON.stringify(result.rows);
         return bookString;
     }); 
 }
