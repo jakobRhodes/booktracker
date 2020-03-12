@@ -4,7 +4,7 @@ const port = process.env.PORT || 3000;
 app.use(express.static(__dirname + "/public"));
 app.set('views', 'public/views');
 app.set("view engine", "ejs");
-app.get('/addBook', testDatabaseConnection);
+//app.get('/addBook', testDatabaseConnection);
 app.listen(port, () => console.log(`Application is Listening on port ${port}!`));
 
 function testDatabaseConnection () {
