@@ -49,7 +49,7 @@ console.log(SQL);
         console.log(result.rows);
         console.log(result.rows.title);
         let book = result.rows[0];
-        let bookTitle = JSON.stringify(book.title)
+        let bookTitle = String(book.title);
         const params = {bookTitle: bookTitle};
         res.render('results', params);
     }); 
