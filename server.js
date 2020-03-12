@@ -13,10 +13,7 @@ app.listen(port, () => console.log(`Application is Listening on port ${port}!`))
 
 function displayResults (req, res) {
     addNewBookToDatabase(req, res);
-    rows = selectLatestBookFromDatabase(req, res);
-    let bookTitle = rows[0].title;
-    const params = {bookTitle: bookTitle};
-    res.render('results', params);
+    selectLatestBookFromDatabase(req, res);
 }
 
 function addNewBookToDatabase (req, res) {
@@ -50,8 +47,11 @@ console.log(SQL);
         // Log this to the console for debugging purposes.
         console.log("1 record selected");
         console.log(result.rows);
-        return res.json(result);
+        res.json(result);
+        var bookTitle = result[0].title;
     }); 
+    const params = {bookTitle: bookTitle};
+    res.render('results', params);
 }
 
 /*
