@@ -3,22 +3,23 @@
 <head><title>Postal Rate</title>
     <style>
         body {
-            background-color: goldenrod;
+            background-color: rgb(66, 85, 168);
              text-align: center;
         }
     </style>
 </head>
 <body>
-<h1>
-    Your book entry in JSON Format<%= bookJSON %>
-</h1>
-<h1>
+<h2>
+    Your book entry in JSON Format<br>
+    <%= bookJSON %>
+</h2>
+<h2>
     Your book entry in a bulleted list 
     <ul>
         <li><%=title%></li>
         <li><%=author%></li>
         <li><%=genre%></li>
       </ul>
-</h1>
+</h2>
 </body>
 </html>
