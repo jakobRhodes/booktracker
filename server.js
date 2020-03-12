@@ -14,6 +14,7 @@ app.listen(port, () => console.log(`Application is Listening on port ${port}!`))
 function displayResults (req, res) {
     addNewBookToDatabase(req, res);
     book = selectLatestBookFromDatabase(req, res);
+    console.log(book);
     const params = {book: book};
     res.render('results', params);
 }
