@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/jakobRhodes/booktracker/issues"
   },
-  "homepage": "https://github.com/jakobRhodes/booktracker#readme"
+  "homepage": "https://github.com/jakobRhodes/booktracker#readme",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
+  }
 }
