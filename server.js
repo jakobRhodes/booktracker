@@ -50,11 +50,13 @@ console.log(SQL);
         // Log this to the console for debugging purposes.
         console.log("1 record selected");
         console.log(result.rows);
+
         return result.rows;
     }); 
 }
 
-function selectBookFromDatabase (req, res) {
+/*
+function selectBookFromDatabase (req, res, title) {
     const connectionString = process.env.DATABASE_URL || 'postgres://rbjaiulinstwdj:f189f4c73ef9dceabf44d5ce68ba252db3208b83f26bc277f4b6f24ca2893ba8@ec2-3-91-112-166.compute-1.amazonaws.com:5432/de9aegpl669co3?ssl=true';
     const pool = new Pool({connectionString: connectionString});
     var SQL = "SELECT * FROM Book ORDER BY Book_ID DESC LIMIT 1";
@@ -71,3 +73,4 @@ function selectBookFromDatabase (req, res) {
             return result.rows;
         }); 
     }
+*/
