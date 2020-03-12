@@ -14,7 +14,7 @@ app.listen(port, () => console.log(`Application is Listening on port ${port}!`))
 function addNewBookToDatabase (req, res) {
 const connectionString = process.env.DATABASE_URL || 'postgres://rbjaiulinstwdj:f189f4c73ef9dceabf44d5ce68ba252db3208b83f26bc277f4b6f24ca2893ba8@ec2-3-91-112-166.compute-1.amazonaws.com:5432/de9aegpl669co3?ssl=true';
 const pool = new Pool({connectionString: connectionString});
-var SQL_INSERT = "INSERT INTO Book (Title, Author, Genre) VALUES (" + req.query.bookTitle + "," + req.query.bookAuthor + "," + req.query.bookGenre + ")";
+var SQL_INSERT = "INSERT INTO Book (Title, Author, Genre) VALUES (" + String(req.query.bookTitle) + " ," + String(req.query.bookAuthor) + " ," + String(req.query.bookGenre) + ")";
 console.log(SQL_INSERT);
 pool.query(SQL_INSERT, function(err, result) {
     // If an error occurred...
