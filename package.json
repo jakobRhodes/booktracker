@@ -2,10 +2,10 @@
   "name": "booktracker",
   "version": "1.0.0",
   "description": "It tracks books you've read!",
-  "main": "request.js",
+  "main": "server.js",
   "scripts": {
-    "start": "request.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "server.js"
   },
   "repository": {
     "type": "git",
