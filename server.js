@@ -11,11 +11,11 @@ app.set("view engine", "ejs");
 app.get('/addBook', displayResults);
 app.listen(port, () => console.log(`Application is Listening on port ${port}!`));
 
-function displayResults () {
+function displayResults (req, res) {
     addNewBookToDatabase(req, res);
     book = selectLatestBookFromDatabase(req, res);
     const params = {book: book};
-   res.render('results', params);
+    res.render('results', params);
 }
 
 function addNewBookToDatabase (req, res) {
