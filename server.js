@@ -48,7 +48,7 @@ console.log(SQL);
         console.log("1 record selected");
         console.log(result.rows);
         res.json(result);
-        var bookTitle = result[0].title;
+        var bookTitle = result.rows.title;
         const params = {bookTitle: bookTitle};
         res.render('results', params);
     }); 
