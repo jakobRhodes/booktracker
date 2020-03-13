@@ -76,7 +76,7 @@ console.log(SQL);
         console.log(result.rows.title);
         let book = result.rows[0];
         let bookJSON = JSON.stringify(book);
-        res.send(bookJSON);
+        res.end(bookJSON);
     }); 
 }
 
