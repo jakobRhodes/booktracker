@@ -15,11 +15,7 @@
     <div class="header">
     <h1>Display Book List</h1>
         <button onclick="getBooks()"> Click To Retrieve Current List of Books</button> <br> <br>
-<div class="addedBook">
-    List of Books You've Added
-    <ul id ="bookList">
-        <li>Test</li>
-      </ul>
+<div class="addedBooks" id="addedBooks">
 </div>
 </body>
 <footer>
@@ -32,7 +28,9 @@ function getBooks() {
     xhttp.send();
     xhttp.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200) {
-            document.getElementById("bookList").innerHTML = this.responseText;
+            var object = JSON.parse(this.responseText);
+            for ()
+            document.getElementById("demo").innerHTML = obj.name + ", " + obj.age;
         }
     }
 }

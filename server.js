@@ -74,7 +74,7 @@ console.log(SQL);
         console.log("1 record selected");
         console.log(result.rows);
         console.log(result.rows.title);
-        let book = result.rows[0];
+        let book = result.rows;
         let bookJSON = JSON.stringify(book);
         res.end(bookJSON);
     }); 
