@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Add Book Form</title>
+   <style>
+       body {
+           background-color: rgb(66, 85, 168);
+           text-align: center;
+       }
+   </style>
+</head>
+<body>
+    <div class="header">
+    <h1>Display Book List</h1>
+        <button onclick="getBooks()"> Click To Retrieve Current List of Books</button>
+<div class="addedBook">
+    List of Books You've Added
+    <ul id ="bookList">
+        <li>Test</li>
+      </ul>
+</div>
+</body>
+<footer>
+    Created by Jakob Rhodes
+</footer>
+<script>
+function getBooks() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "https://fast-badlands-12735.herokuapp.com/selectBooks", true);
+    xhttp.send();
+    xhttp.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200) {
+            document.getElementById("bookList").innerHTML = this.responseText;
+        }
+    }
+}
+</script>
+</html>

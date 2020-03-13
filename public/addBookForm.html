@@ -17,7 +17,7 @@
     <h2>Adds a new book to the user's read list</h2>
     </div>
     <div class="form">
-   <form method="POST" onsubmit="getBook()">
+   <form action="/addBook" method="POST">
       <label for="bookTitle">Enter the title of your book!</label> 
       <input type="text" id="bookTitle" name="bookTitle"> <br><br>
       <label for="bookAuthor">Enter the author of your book!</label> 
@@ -50,25 +50,8 @@
       <input type="submit" value="Submit">
    </form>
 </div>
-<div class="addedBook">
-    Your book entry in a bulleted list 
-    <ul id ="bookList">
-      </ul>
-</div>
 </body>
 <footer>
     Created by Jakob Rhodes
 </footer>
-<script>
-function getBook() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "https://fast-badlands-12735.herokuapp.com/addBook", true);
-    xhttp.send();
-    xhttp.onreadystatechange = function() {
-        if(this.readyState == 4 && this.status == 200) {
-            document.getElementById("bookList").innerHTML = this.responseText;
-        }
-    }
-}
-</script>
 </html>
