@@ -26,9 +26,10 @@
     Created by Jakob Rhodes
 </footer>
 <script>
-$.get( "https://fast-badlands-12735.herokuapp.com/selectBooks", function( data ) {
-  $( ".result" ).html( data );
-  alert( "Load was performed." );
-});
+    $(document).ready(function() {
+  $('#btn').click(function() {
+    alert("Hello");
+  });
+}); 
 </script>
 </html>
