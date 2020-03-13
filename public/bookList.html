@@ -28,8 +28,18 @@ function getBooks() {
     xhttp.send();
     xhttp.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200) {
-            var object = JSON.parse(this.responseText);
-            document.getElementById("addedBooks").innerHTML = this.responseText;
+            var bookList = JSON.parse(this.responseText);
+            var list = "<ul>";
+            for(var i = 0; i < bookList.length; i++) {
+                var book = bookList[i];
+                list += "<li>";
+                list += book.title;
+                list += book.author;
+                list += book.genre;
+                list += "</li>";
+            }
+            list += "</ul>";
+            document.getElementById("addedBooks").innerHTML = list;       
         }
     }
 }
