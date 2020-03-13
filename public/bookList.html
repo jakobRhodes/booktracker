@@ -26,10 +26,15 @@
     Created by Jakob Rhodes
 </footer>
 <script>
-    $(document).ready(function() {
-  $('#btn').click(function() {
-    alert("Hello");
-  });
-}); 
+function getBooks() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "https://fast-badlands-12735.herokuapp.com/selectBooks", true);
+    xhttp.send();
+    xhttp.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200) {
+            document.getElementById("bookList").innerHTML = this.responseText;
+        }
+    }
+}
 </script>
 </html>
