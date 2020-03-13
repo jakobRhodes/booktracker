@@ -29,8 +29,7 @@ function getBooks() {
     xhttp.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200) {
             var object = JSON.parse(this.responseText);
-            for ()
-            document.getElementById("demo").innerHTML = obj.name + ", " + obj.age;
+            document.getElementById("addedBooks").innerHTML = this.responseText;
         }
     }
 }
