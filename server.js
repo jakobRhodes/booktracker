@@ -55,7 +55,7 @@ console.log(SQL);
         let author = String(book.author);
         let genre = String(book.genre);
         const params = {bookJSON: bookJSON, title: title, author: author, genre: genre};
-        res.render('addBookForm.html', params);
+        res.render('results', params);
     }); 
 }
 
