@@ -13,13 +13,7 @@ app.listen(port, () => console.log(`Application is Listening on port ${port}!`))
 
 function displayResults (req, res) {
     addNewBookToDatabase(req, res);
-    let book = selectLatestBookFromDatabase(req, res);
-    let bookJSON = JSON.stringify(book);
-    let title = String(book.title);
-    let author = String(book.author);
-    let genre = String(book.genre);
-    const params = {bookJSON: bookJSON, title: title, author: author, genre: genre};
-    res.render('results', params);
+    selectLatestBookFromDatabase(req, res);
 }
 
 function addNewBookToDatabase (req, res) {
@@ -54,11 +48,17 @@ console.log(SQL);
         console.log("1 record selected");
         console.log(result.rows);
         console.log(result.rows.title);
-        return result.rows[0];
+        let book = result.rows[0];
+        let bookJSON = JSON.stringify(book);
+        let title = String(book.title);
+        let author = String(book.author);
+        let genre = String(book.genre);
+        const params = {bookJSON: bookJSON, title: title, author: author, genre: genre};
+        res.render('addBookForm.html', params);
     }); 
 }
 
-/*
+/* Ensure no duplicate entries TODO
 function selectBookFromDatabase (req, res, title) {
     const connectionString = process.env.DATABASE_URL || 'postgres://rbjaiulinstwdj:f189f4c73ef9dceabf44d5ce68ba252db3208b83f26bc277f4b6f24ca2893ba8@ec2-3-91-112-166.compute-1.amazonaws.com:5432/de9aegpl669co3?ssl=true';
     const pool = new Pool({connectionString: connectionString});
