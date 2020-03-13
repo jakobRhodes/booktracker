@@ -14,7 +14,7 @@
 <body>
     <div class="header">
     <h1>Display Book List</h1>
-        <button onclick="getBooks()"> Click To Retrieve Current List of Books</button>
+        <button onclick="getBooks()"> Click To Retrieve Current List of Books</button> <br> <br>
 <div class="addedBook">
     List of Books You've Added
     <ul id ="bookList">
@@ -26,15 +26,9 @@
     Created by Jakob Rhodes
 </footer>
 <script>
-function getBooks() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "https://fast-badlands-12735.herokuapp.com/selectBooks", true);
-    xhttp.send();
-    xhttp.onreadystatechange = function() {
-        if(this.readyState == 4 && this.status == 200) {
-            document.getElementById("bookList").innerHTML = this.responseText;
-        }
-    }
-}
+$.get( "https://fast-badlands-12735.herokuapp.com/selectBooks", function( data ) {
+  $( ".result" ).html( data );
+  alert( "Load was performed." );
+});
 </script>
 </html>
