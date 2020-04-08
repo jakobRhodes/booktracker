@@ -1,0 +1,134 @@
+body {
+    background-color: #DDDDDD;
+    text-align: center;
+}
+footer {
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     color: white;
+     text-shadow:
+     -1px -1px 0 #000,
+     1px -1px 0 #000,
+     -1px 1px 0 #000,
+     1px 1px 0 #000; 
+}
+.header {
+        font-family: "Times New Roman", Times, serif;
+     background-color: #800000;
+     border: 2px solid black;
+     height: 25%;
+     width: auto;
+}
+.header_text {
+         margin: auto;
+      padding: 10px;
+      font-size: 32px;
+      height: 25%;
+}
+.header_title {
+     background-color: #3D9970;
+     border: 2px solid #DDDDDD;
+     font-size: 32px;
+     margin-left: 25%;
+     margin-right: 25%;
+     color: white;
+     text-shadow:
+     -1px -1px 0 #000,
+     1px -1px 0 #000,
+     -1px 1px 0 #000,
+     1px 1px 0 #000;  
+}
+a {
+     background-color: #3D9970;
+     border: 2px solid #DDDDDD;
+     height: auto;
+     width: auto;
+     display:inline-block;
+     padding-left: 5px;
+     padding-right: 5px;
+     margin-top: 10px;
+}
+.project_text {
+     background-color: white;
+     border: 2px solid black;
+     font-size: 18px;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     margin-left: 25%;
+     margin-right: 25%;
+}
+.form_text {
+         padding : 20px;
+         font-family: "Times New Roman", Times, serif;
+         background-color: #800000;
+         text-align: center;
+    }
+.addBookFormTitle {
+     font-family: "Times New Roman", Times, serif;
+         background-color: #3D9970;
+         border: 2px solid #DDDDDD;
+         height: auto;
+         margin-left: 25%;
+         margin-right: 25%;
+         font-size: 24px;
+         margin-top: 10px;
+}
+.addBookForm {
+    font-family: "Times New Roman", Times, serif;
+        background-color: #800000;
+        border: 2px solid black;
+        height: auto;
+        margin-left: 25%;
+        margin-right: 25%;
+        font-size: 24px;
+        color: white;
+     text-shadow:
+     -1px -1px 0 #000,
+     1px -1px 0 #000,
+     -1px 1px 0 #000,
+     1px 1px 0 #000; 
+}
+.addedBooks {
+        font-family: "Times New Roman", Times, serif;
+        background-color: #800000;
+        border: 2px solid black;
+        width : auto; 
+        height: auto;
+        font-size: 18px;
+        color: white;
+     text-shadow:
+     -1px -1px 0 #000,
+     1px -1px 0 #000,
+     -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
+.bookListHeader {
+        font-family: "Times New Roman", Times, serif;
+        background-color:#3D9970;
+        border: 2px solid black;
+        height: auto;
+        margin-left: 25%;
+        margin-right: 25%;
+        font-size: 24px;
+        color: white;
+     text-shadow:
+     -1px -1px 0 #000,
+     1px -1px 0 #000,
+     -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
+.stats_result {
+    height: auto;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-left: 25%;
+    margin-right: 25%;
+    background-color:#800000;;
+    border: 2px solid lightblue;
+    font-size: 24px;
+    color: white;
+     text-shadow:
+     -1px -1px 0 #000,
+     1px -1px 0 #000,
+     -1px 1px 0 #000,
+     1px 1px 0 #000; 
+}

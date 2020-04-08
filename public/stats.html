@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Book Statistics</title>
+   <link href="stylesheet.css" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <div class="header_text"><div class="header_title">Book Tracker</div>
+            <a href="https://fast-badlands-12735.herokuapp.com/home.html">Home</a>
+            <a href="https://fast-badlands-12735.herokuapp.com/addBookForm.html">New Book</a>
+            <a href="https://fast-badlands-12735.herokuapp.com/bookList.html">View Read Books</a>
+            <a href="https://fast-badlands-12735.herokuapp.com/stats.html">Statistics</a>
+            </div>
+            </div>
+            <br>
+            <div class="stats_form">
+                <form action="/stats" method="POST" id=statForm>
+                     <label for="statOption">Select an option to display statistics for your </label>
+                           <select name="statOption" id="statOption">
+                               <option>Number of Books</option>
+                               <option>Favorite Author</option>
+                               <option>Favorite Genre</option>
+                           </select> 
+                           <br>
+                        </div>
+                        <br>
+                    <button type="submit" onclick="getStats()"> Display Statistics</button> <br><br>
+                  </form>
+            </div>
+            <div class="stats_result">
+                Statistics <br><hr>
+                    <span id="table_header"></span>
+                    <span id="table_info"></span>
+            </div>
+            <br>
+            <img src="https://hbr.org/resources/images/article_assets/2019/05/May19_06_521812097-768x432.jpg" height="300" alt="book">
+           </body>
+<script>
+$(document).ready(function () {
+    $('#statForm').on('submit', function(e) {
+        e.preventDefault();
+        $.ajax({
+            url :'https://fast-badlands-12735.herokuapp.com/stats',
+            type: "POST",
+            data: $(this).serialize(),
+            success: function (data) {
+                var e = document.getElementById("statOption");
+                var option = e.options[e.selectedIndex].text;
+                switch (option) {
+                    case "Number of Books" :
+                    $('#table_header').html("The total number of books you've read is")
+                    var split = String(data).replace(/['"}{]+/g, '').split(":");
+                    var count = split[1];
+                    $('#table_info').html(count);
+                    break;
+                    case "Favorite Author" :
+                    $('#table_header').html("Your Favorite Author is")
+                    var split = String(data).replace(/['"}{]+/g, '').split(":");
+                    var count = split[1];
+                    $('#table_info').html(count);   
+                    break;
+                    case "Favorite Genre" :
+                    $('#table_header').html("Your Favorite Genre is")
+                    var split = String(data).replace(/['"}{]+/g, '').split(":");
+                    var count = split[1];
+                    $('#table_info').html(count);    
+                    break;
+                }
+            },
+            error: function (jXHR, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        });
+    });
+});
+</script>
+<footer>
+    Created by Jakob Rhodes
+    Web Engineering 2
+</footer>
+</html>

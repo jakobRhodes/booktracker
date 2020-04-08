@@ -3,26 +3,29 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Add Book Form</title>
-   <style>
-       body {
-           background-color: rgb(66, 85, 168);
-           text-align: center;
-       }
-   </style>
+   <title>Add a New Book</title>
+   <link href="stylesheet.css" rel="stylesheet">
 </head>
 <body>
     <div class="header">
-    <h1>Add book Form</h1>
-    <h2>Adds a new book to the user's read list</h2>
+    <div class="header_text"><div class="header_title">Book Tracker</div>
+    <a href="https://fast-badlands-12735.herokuapp.com/home.html">Home</a>
+    <a href="https://fast-badlands-12735.herokuapp.com/addBookForm.html">New Book</a>
+    <a href="https://fast-badlands-12735.herokuapp.com/bookList.html">View Read Books</a>
+    <a href="https://fast-badlands-12735.herokuapp.com/stats.html">Statistics</a>
     </div>
-    <div class="form">
-   <form action="/addBook" method="get">
-      <label for="bookTitle">Enter the title of your book!</label> 
+    </div>
+    <br>
+    <div class="addBookForm">
+    <div class="addBookFormTitle">Enter a New Book You've Read! <br>
+    </div>
+    <br>
+   <form action="/addBook" method="POST">
+     <label for="bookTitle">Title</label> 
       <input type="text" id="bookTitle" name="bookTitle"> <br><br>
-      <label for="bookAuthor">Enter the author of your book!</label> 
+      <label for="bookAuthor">Author</label> 
       <input type="text" id="bookAuthor" name="bookAuthor"> <br><br>
-      <label for="bookGenre">Select your book's genre!</label>
+      <label for="bookGenre">Genre</label>
             <select name="bookGenre">
                 <option>Adventure</option>
                 <option>Art</option>
@@ -46,12 +49,16 @@
                 <option>Self-help</option>
                 <option>Thriller</option>
                 <option>Travel</option>
-            </select> <br><br>
+            </select> <br>
       <input type="submit" value="Submit">
    </form>
 </div>
+<br>
+<img src="https://assets.teenvogue.com/photos/5e6bffbbdee1770008c6d9bd/16:9/w_2560%2Cc_limit/GettyImages-577674005.jpg" alt="books" width="600" height="300">
+<br>
 </body>
 <footer>
-    Created by Jakob Rhodes
+    Created by Jakob Rhodes <br>
+    Web Engineering 2
 </footer>
 </html>

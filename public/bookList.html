@@ -4,27 +4,33 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Book List</title>
-   <style>
-       body {
-           background-color: rgb(66, 85, 168);
-           text-align: center;
-       }
-   </style>
+   <link href="stylesheet.css" rel="stylesheet">
 </head>
 <body>
     <div class="header">
-    <h1>Display Book List</h1>
-        <button onclick="getBooks()"> Click To Retrieve Current List of Books</button> <br> <br>
+        <div class="header_text"><div class="header_title">Book Tracker</div>
+        <a href="https://fast-badlands-12735.herokuapp.com/home.html">Home</a>
+        <a href="https://fast-badlands-12735.herokuapp.com/addBookForm.html">New Book</a>
+        <a href="https://fast-badlands-12735.herokuapp.com/bookList.html">View Read Books</a>
+        <a href="https://fast-badlands-12735.herokuapp.com/stats.html">Statistics</a>
+        </div>
+    </div>
+<br>
+<button onclick="getBooks()"> Display Books You've Read</button> <br><br>
+<div class="bookListHeader">
+Book List 
 <div class="addedBooks" id="addedBooks">
+</div>
 </div>
 </body>
 <footer>
-    Created by Jakob Rhodes
+    Created by Jakob Rhodes <br>
+    Web Engineering 2
 </footer>
 <script>
 function getBooks() {
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "https://fast-badlands-12735.herokuapp.com/selectBooks", true);
+    xhttp.open("POST", "https://fast-badlands-12735.herokuapp.com/selectBooks", true);
     xhttp.send();
     xhttp.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200) {
